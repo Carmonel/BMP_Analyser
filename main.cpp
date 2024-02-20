@@ -61,10 +61,10 @@ int main(int argc, char* argv[]) {
     ///
     imageToRGBChannelsCorrelation(fileHeader, infoHeader, pixels, H, W);
     // May return 0xC0000005, use debugger
-    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
-    std::cout << "| !! imageToRGBChannelsAutocorrelation() may return 0xC0000005. Use debugger for results of func !! |" << std::endl;
-    std::cout << "|                                         Try run func? y/n                                         |" << std::endl;
-    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "| !! imageToChannelsAutocorrelation() may return 0xC0000005. Use debugger for results of func !! |" << std::endl;
+    std::cout << "|                                       Try run func? y/n                                        |" << std::endl;
+    std::cout << "--------------------------------------------------------------------------------------------------" << std::endl;
     char ch;
     while ((ch != 'y') && (ch != 'n')){
         std::cin >> ch;
@@ -78,6 +78,9 @@ int main(int argc, char* argv[]) {
     YCbCrCorrelation(YCbCrPixels, H, W);
     saveYCbCrImages(fileHeader, infoHeader, YCbCrPixels, H, W, outputPath);
     reworkRGBandCalculatePSNR(YCbCrPixels, pixels, H, W);
+    std::cout << std::endl;
+
+    if (ch == 'y') imageToYCbCrChannelsAutocorrelation(fileHeader, infoHeader, YCbCrPixels, H, W, outputPath + "AC\\");
     std::cout << std::endl;
 
     ///

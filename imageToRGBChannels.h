@@ -21,7 +21,7 @@ void autocorrelationEveryY(std::vector<unsigned char>& channel, int H, int W, co
     std::map<int, double> ac3 = autocorrelation(channel, H, W, 0);
     std::map<int, double> ac4 = autocorrelation(channel, H, W, 5);
     std::map<int, double> ac5 = autocorrelation(channel, H, W, 10);
-    for (int i = 0; i < W / 4; i++){
+    for (int i = -(W / 4 - 1); i < W / 4; i++){
         file << i << "=" << ac1.at(i) << "=" << ac2.at(i) << "=" << ac3.at(i) << "=" << ac4.at(i) << "=" << ac4.at(i) << std::endl;
     }
     ac1.clear();

@@ -31,6 +31,25 @@ std::vector<RGBPixel> reworkRGB(std::vector<YCbCrPixel>& Y, int H, int W){
     return newPixels;
 }
 
+void imageToYCbCrChannelsAutocorrelation(BITMAPFILEHEADER fileHeader, BITMAPINFOHEADER infoHeader, std::vector<YCbCrPixel>& pixels, int H, int W, const std::string& outputPath){
+    std::cout << "!! If imageToYCbCrChannelsAutocorrelation() unable to open file create folder 'AC' in output directory !!" << std::endl;
+    std::vector<unsigned char> channel(H * W);
+
+    // Y autocorrelation
+    for (int i = 0; i < H * W; i++) channel[i] = pixels[i].Y;
+    autocorrelationEveryY(channel, H, W, outputPath + "autocorrelationY.txt");
+
+    // Cb autocorrelation
+    for (int i = 0; i < H * W; i++) channel[i] = pixels[i].Cb;
+    autocorrelationEveryY(channel, H, W, outputPath + "autocorrelationCb.txt");
+
+    // Cr autocorrelation
+    for (int i = 0; i < H * W; i++) channel[i] = pixels[i].Cr;
+    autocorrelationEveryY(channel, H, W, outputPath + "autocorrelationCr.txt");
+
+    channel.clear();
+}
+
 void reworkRGBandCalculatePSNR(std::vector<YCbCrPixel>& Y, const std::vector<RGBPixel>& pixels, int H, int W){
     std::vector<RGBPixel> newPixels = reworkRGB(Y, H, W);
 
