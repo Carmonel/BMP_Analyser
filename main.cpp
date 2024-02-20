@@ -59,7 +59,16 @@ int main(int argc, char* argv[]) {
     /// Correlation & autocorrelation (4)
     ///
     imageToRGBChannelsCorrelation(fileHeader, infoHeader, pixels, H, W);
-    //imageToRGBChannelsAutocorrelation(fileHeader, infoHeader, pixels, H, W, outputPath + "AC\\"); // May return 0xC0000005
+    // May return 0xC0000005, use debugger
+    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "| !! imageToRGBChannelsAutocorrelation() may return 0xC0000005. Use debugger for results of func !! |" << std::endl;
+    std::cout << "|                                         Try run func? y/n                                         |" << std::endl;
+    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
+    char ch;
+    while ((ch != 'y') && (ch != 'n')){
+        std::cin >> ch;
+    }
+    if (ch == 'y') imageToRGBChannelsAutocorrelation(fileHeader, infoHeader, pixels, H, W, outputPath + "AC\\");
 
     ///
     /// RGBtoYCbCr (5 - 7)
@@ -68,29 +77,34 @@ int main(int argc, char* argv[]) {
     YCbCrCorrelation(YCbCrPixels, H, W);
     saveYCbCrImages(fileHeader, infoHeader, YCbCrPixels, H, W, outputPath);
     reworkRGBandCalculatePSNR(YCbCrPixels, pixels, H, W);
+    std::cout << std::endl;
 
     ///
     /// decimation (8-11)
     ///
     decimation2(YCbCrPixels, pixels, H, W);
+    std::cout << std::endl;
     decimation4(YCbCrPixels, pixels, H, W);
+    std::cout << std::endl;
 
     ///
     /// Histograms (12)
     ///
     printRGB(pixels, H, W, outputPath);
     printYCbCr(YCbCrPixels, H, W, outputPath);
+    std::cout << std::endl;
 
     ///
     /// Entropy (13)
     ///
     entropyRGB(pixels, H, W);
     entropyYCbCr(YCbCrPixels, H, W);
+    std::cout << std::endl;
 
     ///
     /// DPCM (15)
     ///
-    
+
 
     pixels.clear();
     YCbCrPixels.clear();

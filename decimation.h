@@ -24,7 +24,6 @@ void decimation4(const std::vector<YCbCrPixel>& YCbCrPixels, const std::vector<R
         }
     }
 
-    std::cout << "Decimation Cb, Cr /4 (Mid) started." << std::endl;
     // Децимация как среднее арифметическое
     std::vector<YCbCrPixel> pixelsYCbCrMid(H * W, YCbCrPixel(0, 0, 0));
     for (int i = 0; i < H; i = i + 4){

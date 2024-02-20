@@ -34,6 +34,7 @@ void autocorrelationEveryY(std::vector<unsigned char>& channel, int H, int W, co
 }
 
 void imageToRGBChannelsAutocorrelation(BITMAPFILEHEADER fileHeader, BITMAPINFOHEADER infoHeader, std::vector<RGBPixel>& pixels, int H, int W, const std::string& outputPath){
+    std::cout << "!! If imageToRGBChannelsAutocorrelation() unable to open file create folder 'AC' in output directory !!" << std::endl;
     std::vector<unsigned char> channel(H * W);
 
     // R autocorrelation
