@@ -5,7 +5,8 @@
 
 #include "pixels.h"
 
-double entropy(const std::vector<unsigned char>& a){
+template<class T>
+double entropy(const std::vector<T>& a){
     double result = 0;
     std::vector<int> counts(256, 0);
     int totalPixels = a.size();

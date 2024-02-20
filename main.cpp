@@ -11,6 +11,7 @@
 #include "decimation.h"
 #include "histogram.h"
 #include "entropy.h"
+#include "DPCM.h"
 
 int main(int argc, char* argv[]) {
     if (argc != 3){
@@ -102,9 +103,11 @@ int main(int argc, char* argv[]) {
     std::cout << std::endl;
 
     ///
-    /// DPCM (15)
+    /// DPCM (14 - 16)
     ///
-
+    DPCMforRGB(pixels, H, W, outputPath + "DPCM\\");
+    std::cout << std::endl;
+    DPCMforYCbCr(YCbCrPixels, H, W, outputPath + "DPCM\\");
 
     pixels.clear();
     YCbCrPixels.clear();
