@@ -12,6 +12,7 @@
 #include "histogram.h"
 #include "entropy.h"
 #include "DPCM.h"
+#include "subImages.h"
 
 int main(int argc, char* argv[]) {
     if (argc != 3){
@@ -84,7 +85,7 @@ int main(int argc, char* argv[]) {
     std::cout << std::endl;
 
     ///
-    /// decimation (8-11)
+    /// decimation (8 - 11)
     ///
     decimation2(YCbCrPixels, pixels, H, W);
     std::cout << std::endl;
@@ -111,6 +112,12 @@ int main(int argc, char* argv[]) {
     DPCMforRGB(pixels, H, W, outputPath + "DPCM\\");
     std::cout << std::endl;
     DPCMforYCbCr(YCbCrPixels, H, W, outputPath + "DPCM\\");
+    std::cout << std::endl;
+
+    ///
+    /// 17
+    ///
+    makeSubImagesAndCalculateCorrelation(fileHeader, infoHeader, YCbCrPixels, H, W, outputPath + "Sub\\");
 
     pixels.clear();
     YCbCrPixels.clear();

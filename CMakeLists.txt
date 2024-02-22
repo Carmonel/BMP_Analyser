@@ -12,4 +12,5 @@ add_executable(BMP_Analyser main.cpp
         decimation.h
         histogram.h
         entropy.h
-        DPCM.h)
+        DPCM.h
+        subImages.h)

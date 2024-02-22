@@ -35,9 +35,9 @@ void entropyYCbCr(const std::vector<YCbCrPixel>& pixels, int H, int W){
         Cr[i] = pixels[i].Cr;
     }
 
-    std::cout << "entropyR = " << entropy(Y) << std::endl;
-    std::cout << "entropyG = " << entropy(Cb) << std::endl;
-    std::cout << "entropyB = " << entropy(Cr) << std::endl;
+    std::cout << "entropyY = " << entropy(Y) << std::endl;
+    std::cout << "entropyCb = " << entropy(Cb) << std::endl;
+    std::cout << "entropyCr = " << entropy(Cr) << std::endl;
 
     Y.clear();
     Cb.clear();
