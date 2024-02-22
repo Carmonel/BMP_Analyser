@@ -15,7 +15,6 @@ double correlation(std::vector<unsigned char> a, std::vector<unsigned char> b);
 std::map<int, double> autocorrelation(std::vector<unsigned char>& src, int H, int W, int y){
     std::map<int, double> result;
 
-    #pragma omp parallel for
     for (int x = -(W / 4 - 1); x < W / 4; x++){
         std::vector<unsigned char> a = std::vector<unsigned char>();
         std::vector<unsigned char> b = std::vector<unsigned char>();

@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/user/CLionProjects/BMP_Analyser/cmake-build-debug"
+			"value" : "C:/Users/user/CLionProjects/BMP_Analyser/cmake-build-release"
 		},
 		{
 			"name" : "BMP_Analyser_IS_TOP_LEVEL",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "Debug"
+			"value" : "Release"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/user/CLionProjects/BMP_Analyser/cmake-build-debug"
+			"value" : "c:/Users/user/CLionProjects/BMP_Analyser/cmake-build-release"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -611,7 +611,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/user/CLionProjects/BMP_Analyser/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/user/CLionProjects/BMP_Analyser/cmake-build-release/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",

@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
     ///
     /// Correlation & autocorrelation (4)
     ///
-    imageToRGBChannelsCorrelation(fileHeader, infoHeader, pixels, H, W);
+    RGBChannelsCorrelation(pixels, H, W);
     // May return 0xC0000005, use debugger
     std::cout << "--------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "| !! imageToChannelsAutocorrelation() may return 0xC0000005. Use debugger for results of func !! |" << std::endl;

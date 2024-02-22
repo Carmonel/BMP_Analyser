@@ -8,7 +8,6 @@
 #include <vector>
 #include <filesystem>
 #include <map>
-#include <thread>
 
 #include "pixels.h"
 #include "correlation.h"
@@ -52,7 +51,7 @@ void imageToRGBChannelsAutocorrelation(BITMAPFILEHEADER fileHeader, BITMAPINFOHE
     channel.clear();
 }
 
-void imageToRGBChannelsCorrelation(BITMAPFILEHEADER fileHeader, BITMAPINFOHEADER infoHeader, std::vector<RGBPixel>& pixels, int H, int W){
+void RGBChannelsCorrelation(std::vector<RGBPixel>& pixels, int H, int W){
     std::vector<unsigned char> c1(H * W), c2(H * W);
 
     // BLUE - GREEN
